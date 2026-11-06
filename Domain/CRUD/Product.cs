@@ -1,0 +1,45 @@
+﻿using Common.Attributes;
+using System;
+using System.Collections.Generic;
+using Common.Interfaces;
+using DataAccess.Entities;
+
+namespace Domain.CRUD {
+    public class Product : ICrud {
+        TABLE_Product SQLProductTable = new TABLE_Product();
+
+        public void Create(AttributeBaseClass attributes) {
+            if (!(attributes is ATTR_Product product))
+                throw new ArgumentException("Invalid product attributes.");
+
+            SQLProductTable.Create(attributes);
+        }
+
+        public void Update(int id, AttributeBaseClass attributes) {
+            if (!(attributes is ATTR_Product product))
+                throw new ArgumentException("Invalid product attributes.");
+
+            SQLProductTable.Update(id, attributes);
+        }
+
+        public AttributeBaseClass Read(int id) {
+            return SQLProductTable.Read(id);
+        }
+
+        public List<AttributeBaseClass> ReadWithPage(int page) {
+            return SQLProductTable.ReadWithPage(page);
+        }
+
+        public List<AttributeBaseClass> ReadWhereColumnWithPage(string column_name, string searched_value, int page) {
+            return SQLProductTable.ReadWhereColumnWithPage(column_name, searched_value, page);
+        }
+
+        public List<AttributeBaseClass> ReadFromColumnWithPage(string column_name, int page) {
+            return SQLProductTable.ReadFromColumnWithPage(column_name, page);
+        }
+
+        public void Delete(int id) {
+            SQLProductTable.Delete(id);
+        }
+    }
+}
