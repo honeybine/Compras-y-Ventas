@@ -8,5 +8,10 @@ namespace Presentation.Compras.Productos {
 
             basiccrud1.setUpMain<ATTR_Product>(new Product());
         }
+
+        private void onRelateButtonPress(object sender, EventArgs e) {
+            ProviderProductForm _new = new ProviderProductForm();
+            _new.Show();
+        }
     }
 }

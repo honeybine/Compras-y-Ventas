@@ -16,7 +16,7 @@ namespace DataAccess.Entities {
             SQLExecuter exec = new SQLExecuter("CreateProduct");
 
             exec.AddParameter("@INPUT_name",            product.Name);
-            exec.AddParameter("@INPUT_category",        product.Category);
+            exec.AddParameter("@INPUT_category",        product.CategoryID);
             exec.AddParameter("@INPUT_description",     product.Description);
             exec.AddParameter("@INPUT_brand",           product.Brand);
             exec.AddParameter("@INPUT_expiration_date", product.ExpirationDate);
@@ -41,7 +41,7 @@ namespace DataAccess.Entities {
 
             exec.AddParameter("@INPUT_id",              id);
             exec.AddParameter("@INPUT_name",            product.Name);
-            exec.AddParameter("@INPUT_category",        product.Category);
+            exec.AddParameter("@INPUT_category",        product.CategoryID);
             exec.AddParameter("@INPUT_description",     product.Description);
             exec.AddParameter("@INPUT_brand",           product.Brand);
             exec.AddParameter("@INPUT_expiration_date", product.ExpirationDate);

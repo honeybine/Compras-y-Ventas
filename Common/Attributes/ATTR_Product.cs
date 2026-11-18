@@ -4,9 +4,9 @@ namespace Common.Attributes {
     public class ATTR_Product : AttributeBaseClass {
         public int? ProductID { get; set; }
         public string       Name { get; set; }
-        public string       Category { get; set; }
+        public int       CategoryID { get; set; }
         public string       Description { get; set; }
-        public string       Brand { get; set; }
+        public int       Brand { get; set; }
 
         public DateTime    ExpirationDate { get; set; }
 
@@ -23,15 +23,15 @@ namespace Common.Attributes {
         public ATTR_Product() {
             SearchThroughWith = [
                     "Name",
-                "Category",
-                "Brand"
+                    "CategoryID",
+                "BrandID"
                 ];
         }
 
         public ATTR_Product(
             int? product_id,
             string name,
-            string category,
+            int category_id,
             string description,
             string brand,
             DateTime expiration_date,
@@ -51,7 +51,7 @@ namespace Common.Attributes {
             ];
             ProductID = product_id;
             Name = name;
-            Category = category;
+            CategoryID = category_id;
             Description = description;
             Brand = brand;
             ExpirationDate = expiration_date;

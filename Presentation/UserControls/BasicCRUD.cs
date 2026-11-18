@@ -252,10 +252,10 @@ namespace Presentation.UserControls {
             if (crud == null)
                 return;
 
-            // Si el programa está creando, entonces:
+            // Si el programa está creando, entonces llama la funcion para crear usando la informacion dada:
             if (current_action == "CREANDO") {
-                crud.Create(attribute_info); 
-            } // Si está modificando, entonces: 
+                crud.Create(attribute_info);
+            } // Si está modificando, entonces entonces llama la funcion para modificar usando la informacion dada: 
             else if (current_action == "MODIFICANDO") {
                 int id = getIDFromAttribute(attribute_info);
                 crud.Update(id, attribute_info);
