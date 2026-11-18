@@ -6,11 +6,11 @@ namespace Common.Attributes {
         public string       Name { get; set; }
         public int       CategoryID { get; set; }
         public string       Description { get; set; }
-        public int       Brand { get; set; }
+        public int       BrandID { get; set; }
 
         public DateTime    ExpirationDate { get; set; }
 
-        public int         Lot { get; set; }
+        public int         LotID { get; set; }
         public float       PurchasePrice { get; set; }
         public float       SalePrice { get; set; }
 
@@ -24,7 +24,7 @@ namespace Common.Attributes {
             SearchThroughWith = [
                     "Name",
                     "CategoryID",
-                "BrandID"
+                    "BrandID"
                 ];
         }
 
@@ -33,9 +33,9 @@ namespace Common.Attributes {
             string name,
             int category_id,
             string description,
-            string brand,
+            int brand_id,
             DateTime expiration_date,
-            int lot,
+            int lot_id,
             float purchase_price,
             float sale_price,
             int lead_time_days,
@@ -46,16 +46,16 @@ namespace Common.Attributes {
         ) {
             SearchThroughWith = [
                 "Name",
-                "Category",
-                "Brand"
+                "CategoryID",
+                "BrandID"
             ];
             ProductID = product_id;
             Name = name;
             CategoryID = category_id;
             Description = description;
-            Brand = brand;
+            BrandID = brand_id;
             ExpirationDate = expiration_date;
-            Lot = lot;
+            LotID = lot_id;
             PurchasePrice = purchase_price;
             SalePrice = sale_price;
             LeadTimeDays = lead_time_days;

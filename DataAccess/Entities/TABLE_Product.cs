@@ -43,9 +43,9 @@ namespace DataAccess.Entities {
             exec.AddParameter("@INPUT_name",            product.Name);
             exec.AddParameter("@INPUT_category",        product.CategoryID);
             exec.AddParameter("@INPUT_description",     product.Description);
-            exec.AddParameter("@INPUT_brand",           product.Brand);
+            exec.AddParameter("@INPUT_brand_id",           product.BrandID);
             exec.AddParameter("@INPUT_expiration_date", product.ExpirationDate);
-            exec.AddParameter("@INPUT_lot",             product.Lot);
+            exec.AddParameter("@INPUT_lot_id",             product.LotID);
             exec.AddParameter("@INPUT_purchase_price",  product.PurchasePrice);
             exec.AddParameter("@INPUT_sale_price",      product.SalePrice);
             exec.AddParameter("@INPUT_lead_time_days", product.LeadTimeDays);
